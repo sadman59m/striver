@@ -1,55 +1,13 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-struct Node
-{
-    int val;
-    Node *next;
-};
-
-Node *createNode(int val)
-{
-    Node *newNode = new Node;
-    newNode->val = val;
-    newNode->next = nullptr;
-    return newNode;
-}
-
-void insert(Node *&head, int val)
-{
-    if (head == nullptr)
-    {
-        head = createNode(val);
-    }
-    else
-    {
-        Node *curr = head;
-        while (curr->next != nullptr)
-        {
-            curr = curr->next;
+int main() {
+    vector<vector<int>> vec(10, vector<int>(2, 0));
+    for(int i=0; i<vec.size(); ++i) {
+        for(int j=0; j<vec[i].size(); ++j) {
+            cout << vec[i][j] << " ";
         }
-        curr->next = createNode(val);
+        cout << "\n";
     }
-}
-
-void traverse(Node *myList)
-{
-    while (myList != nullptr)
-    {
-        cout << myList->val << "\n";
-        myList = myList->next;
-    }
-}
-
-int main()
-{
-    Node *head = nullptr;
-    int val;
-    while (cin >> val && val != -99999)
-    {
-        insert(head, val);
-    }
-    traverse(head);
-
     return 0;
 }
