@@ -1,8 +1,13 @@
-const crypto = require("crypto");
+const globalContext = this;
 
-crypto.randomBytes(8, (err, buff) => {
-  if (err) throw err;
-  console.log(buff.toString("hex"));
-});
+const outerArrowFunction = function () {
+  const outerArrowFunction = this;
+  const innerArrowFunction = () => {
+    console.log(this === outerArrowFunction); // true
+    console.log(this === globalContext);
+  };
 
-console.log("loser");
+  innerArrowFunction();
+};
+
+outerArrowFunction();
