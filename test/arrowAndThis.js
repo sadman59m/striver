@@ -9,6 +9,7 @@ const person = {
 
   showNameNesFirst: function () {
     // if we set name = 'sadman' here, then the output is 'sadman'
+    // by 'this' keyword, arrow Fn refer to surrounding context
     const shoeNameNesSecond = function () {
       const nestedNesterName = () => {
         return this.name; // undefined
