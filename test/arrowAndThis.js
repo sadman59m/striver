@@ -7,6 +7,15 @@ const person = {
     return show();
   },
 
+  showNameNestedSecond: function () {
+    // own context where the function is defined
+    const newNestedShow = function () {
+      return this.name; // undefined. this context has no name property
+    };
+
+    return newNestedShow();
+  },
+
   showNameNesFirst: function () {
     // if we set name = 'sadman' here, then the output is 'sadman'
     // by 'this' keyword, arrow Fn refer to surrounding context
@@ -28,7 +37,4 @@ const person = {
   },
 };
 
-console.log(person.showNameNested());
-console.log(person.showNameNesFirst());
-console.log(person.showName());
-person.showArrowName();
+console.log(person.showNameNestedSecond());
