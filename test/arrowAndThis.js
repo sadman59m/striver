@@ -37,4 +37,11 @@ const person = {
   },
 };
 
-console.log(person.showNameNestedSecond());
+function showThisFn() {
+  // const showNestedThis = () => {
+  //   return this;
+  // };
+  return this;
+}
+
+console.log(showThisFn());
