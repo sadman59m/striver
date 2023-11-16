@@ -1,3 +1,5 @@
-const name = "sadman";
+const testFn = function (name) {
+  console.log(name);
+};
 
-console.log(`the name is ${name}`);
+testFn("sakib");
